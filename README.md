@@ -13,8 +13,8 @@ Hours | Minutes
 ![11](/sample_data/h_1148_am.png)|![48](/sample_data/m_1148_am.png)
 ![12](/sample_data/h_1233_am.png)|![33](/sample_data/m_1233_am.png)
 ![11](/sample_data/h_1100_am.png)|![00](/sample_data/m_1100_am.png)
-![5](/sample_data/h_538_am.png)|![38](/sample_data/m_538_am.png)
-![1](/sample_data/h_116_am.png)|![16](/sample_data/m_116_am.png)
+![5](/sample_data/h_538_pm.png)|![38](/sample_data/m_538_pm.png)
+![1](/sample_data/h_116_pm.png)|![16](/sample_data/m_116_pm.png)
 ![1](/sample_data/h_125_am.png)|![25](/sample_data/m_125_am.png)
 
 ***
@@ -35,6 +35,8 @@ A random state of 24 was used to define the seed for the random number generator
 ***
 
 ## Models
+
+My goal was to implement four multi-input, multi-output models that were inspired by models we had learned about throughout this course using the Keras Fuctional API. I used the following architectures displayed below.
 
 ### Model 1
 #### Single Conv2D Layer
@@ -293,8 +295,8 @@ A random state of 24 was used to define the seed for the random number generator
     216/216 [==============================] - 1s 2ms/step
     Test Data Set
     Loss: 1.8534541571581806
-    Hour Loss: 0.08%
-    Minute Loss: 1.78%
+    Hour Loss: 0.08
+    Minute Loss: 1.78
     Hour Accuracy: 98.15%
     Minute Accuracy: 59.26%
 
@@ -306,8 +308,8 @@ A random state of 24 was used to define the seed for the random number generator
     216/216 [==============================] - 1s 6ms/step
     Test Data Set
     Loss: 2.0289083321889243
-    Hour Loss: 0.08%
-    Minute Loss: 1.95%
+    Hour Loss: 0.08
+    Minute Loss: 1.95
     Hour Accuracy: 98.15%
     Minute Accuracy: 65.74%
 
@@ -319,8 +321,8 @@ A random state of 24 was used to define the seed for the random number generator
     216/216 [==============================] - 4s 20ms/step
     Test Data Set
     Loss: 0.8320705537442807
-    Hour Loss: 0.05%
-    Minute Loss: 0.78%
+    Hour Loss: 0.05
+    Minute Loss: 0.78
     Hour Accuracy: 99.07%
     Minute Accuracy: 88.89%
 
@@ -332,18 +334,25 @@ A random state of 24 was used to define the seed for the random number generator
     216/216 [==============================] - 3s 16ms/step
     Test Data Set
     Loss: 1.791107698723122
-    Hour Loss: 0.08%
-    Minute Loss: 1.72%
+    Hour Loss: 0.08
+    Minute Loss: 1.72
     Hour Accuracy: 97.69%
     Minute Accuracy: 61.11%
 
     Predictions off by 6.7 minutes on average
 
+Model 3 had the highest accuracy on both hour and minute data, the lowest loss, and the best average predicted times. It is interesting to note that despite the roughly 30% improvement in minute accuracy i Model 3 compared to Model 1, the average predicted time of this model is only about 1 minute better. 
+
 ***
 
 ## Benchmark
 
+I was not able to benchmark my dataset on another model, but I did discover the following research papers regarding recognizing multiple digits in an image using convolutional neural networks.
 
+Title | Abstract
+------|----------
+[MDig: Multi-digit Recognition using Convolutional Neural Network on Mobile](https://web.stanford.edu/class/cs231m/projects/final-report-yang-pu.pdf) | Multi-character recognition in arbitrary photographs on mobile platform is diffi-cult, in terms of both accuracy and real-time performance. In this paper, we focuson the domain of hand-written multi-digit recognition.  Convolutional neural net-work (CNN) is the state-of-the-art solution for object recognition,  and presentsa workload that is both compute and data intensive.  To reduce the workload, wetrain a shallow CNN offline, achieving 99.07% top-1 accuracy. And we utilize pre-processing and segmentation to reduce input image size fed into CNN. For CNNimplementation on the mobile platform, we adopt and modify DeepBeliefSDK tosupport batching fully-connected layers. On NVIDIA SHIELD tablet, the applica-tion processes a frame and extracts 32 digits in approximately 60ms, and batchingthe fully-connected layers reduces the CNN runtime by another 12%.
+[Multi-digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks](https://arxiv.org/abs/1312.6082)| Recognizing arbitrary multi-character text in unconstrained natural photographs is a hard problem. In this paper, we address an equally hard sub-problem in this domain viz. recognizing arbitrary multi-digit numbers from Street View imagery. Traditional approaches to solve this problem typically separate out the localization, segmentation, and recognition steps. In this paper we propose a unified approach that integrates these three steps via the use of a deep convolutional neural network that operates directly on the image pixels. We employ the DistBelief implementation of deep neural networks in order to train large, distributed neural networks on high quality images. We find that the performance of this approach increases with the depth of the convolutional network, with the best performance occurring in the deepest architecture we trained, with eleven hidden layers. We evaluate this approach on the publicly available SVHN dataset and achieve over 96% accuracy in recognizing complete street numbers. We show that on a per-digit recognition task, we improve upon the state-of-the-art, achieving 97.84% accuracy. We also evaluate this approach on an even more challenging dataset generated from Street View imagery containing several tens of millions of street number annotations and achieve over 90% accuracy. To further explore the applicability of the proposed system to broader text recognition tasks, we apply it to synthetic distorted text from reCAPTCHA. reCAPTCHA is one of the most secure reverse turing tests that uses distorted text to distinguish humans from bots. We report a 99.8% accuracy on the hardest category of reCAPTCHA. Our evaluations on both tasks indicate that at specific operating thresholds, the performance of the proposed system is comparable to, and in some cases exceeds, that of human operators. 
 
 ***
 
