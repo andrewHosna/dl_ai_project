@@ -8,6 +8,15 @@ I took 1440 photos of a digital clock, 1 photo for each minute of the day, using
 ## Data Visualization
 Many images of the processed data are provided in the Python Notebook that goes along with this project. Below are some examples:
 
+Hours | Minutes
+-----|---------
+![11](/sample_data/h_1148_am.png)|![48](/sample_data/m_1148_am.png)
+![12](/sample_data/h_1233_am.png)|![33](/sample_data/m_1233_am.png)
+![11](/sample_data/h_1100_am.png)|![00](/sample_data/m_1100_am.png)
+![5](/sample_data/h_538_am.png)|![38](/sample_data/m_538_am.png)
+![1](/sample_data/h_116_am.png)|![16](/sample_data/m_116_am.png)
+![1](/sample_data/h_125_am.png)|![25](/sample_data/m_125_am.png)
+
 ***
 
 ## Training, Validation, and Test Data
@@ -44,6 +53,8 @@ A random state of 24 was used to define the seed for the random number generator
     Trainable params: 640
     Non-trainable params: 0
     _________________________________________________________________
+    
+  ![Base Model 1](/models/base_1.png)
 
     Model 1
     __________________________________________________________________________________________________
@@ -64,6 +75,8 @@ A random state of 24 was used to define the seed for the random number generator
     Trainable params: 74,173,385
     Non-trainable params: 0
     __________________________________________________________________________________________________
+    
+  ![Model 1](/models/model_1.png)
 
 ### Model 2
 #### Two Conv2D Layers Followed by a MaxPooling2D Layer
@@ -86,6 +99,8 @@ A random state of 24 was used to define the seed for the random number generator
     Trainable params: 37,568
     Non-trainable params: 0
     _________________________________________________________________
+    
+  ![Base Model 2](/models/base_2.png)
 
     Model 2
     __________________________________________________________________________________________________
@@ -106,6 +121,8 @@ A random state of 24 was used to define the seed for the random number generator
     Trainable params: 17,996,809
     Non-trainable params: 0
     __________________________________________________________________________________________________
+    
+  ![Model 2](/models/model_2.png)
     
 ### Model 3
 #### Groups of Conv2D Layers Each Followed by a MaxPooling2D Layer
@@ -149,6 +166,8 @@ A random state of 24 was used to define the seed for the random number generator
     Non-trainable params: 0
     _________________________________________________________________
     
+  ![Base Model 3](/models/base_3.png)
+    
     Model 3
     __________________________________________________________________________________________________
     Layer (type)                    Output Shape         Param #     Connected to                     
@@ -168,6 +187,8 @@ A random state of 24 was used to define the seed for the random number generator
     Trainable params: 349,929
     Non-trainable params: 0
     __________________________________________________________________________________________________
+    
+  ![Model 3](/models/model_3.png)
 
 ### Model 4
 #### Simple Residual Network
@@ -238,6 +259,8 @@ A random state of 24 was used to define the seed for the random number generator
     Non-trainable params: 456
     __________________________________________________________________________________________________
     
+  ![Base Model 4](/models/base_4.png)
+    
     Model 4
     __________________________________________________________________________________________________
     Layer (type)                    Output Shape         Param #     Connected to                     
@@ -257,6 +280,8 @@ A random state of 24 was used to define the seed for the random number generator
     Trainable params: 303,796
     Non-trainable params: 456
     __________________________________________________________________________________________________
+    
+  ![Model 4](/models/model_4.png)
 
 ***
 
@@ -387,14 +412,30 @@ A random state of 24 was used to define the seed for the random number generator
 ### Model 1
 #### Single Conv2D Layer
 
+Loss | Accuracy
+-----|---------
+![Model 1 Loss](/models/model_1_loss.png)|![Model 1 Accuracy](/models/model_1_acc.png)
+
 ### Model 2
 #### Two Conv2D Layers Followed by a MaxPooling2D Layer
+
+Loss | Accuracy
+-----|---------
+![Model 2 Loss](/models/model_2_loss.png)|![Model 2 Accuracy](/models/model_2_acc.png)
 
 ### Model 3
 #### Groups of Conv2D Layers Each Followed by a MaxPooling2D Layer
 
+Loss | Accuracy
+-----|---------
+![Model 3 Loss](/models/model_3_loss.png)|![Model 3 Accuracy](/models/model_3_acc.png)
+
 ### Model 4
 #### Simple Residual Network
+
+Loss | Accuracy
+-----|---------
+![Model 4 Loss](/models/model_4_loss.png)|![Model 4 Accuracy](/models/model_4_acc.png)
 
 ***
 
